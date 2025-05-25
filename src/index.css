@@ -1,0 +1,73 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Outfit", sans-serif;
+}
+
+body {
+  background: #f5f5f5;
+  overflow-x: hidden; 
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.container {
+  padding-left: 10%;
+  padding-right: 10%;
+  max-width: 100%; /* Ensure the container does not exceed the viewport width */
+}
+
+.btn {
+  background: #fff;
+  color: #212121;
+  padding: 14px 25px;
+  font-size: 16px;
+  border-radius: 30px;
+  cursor: pointer;
+  border: 0;
+  outline: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s ease, box-shadow 0.3s;
+}
+
+.btn.dark-btn {
+  background-color: #50c878;
+}
+
+.btn img {
+  width: 20px;
+  margin-left: 10px;
+}
+
+.btn:hover {
+  transform: scale(1.03); /* Slight zoom effect */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+/* media queries */
+
+@media (max-width: 1200px) {
+      .container{
+          padding-left: 5%; 
+          padding-right: 5%;
+      }
+      .btn{
+          padding: 14px  22px;
+      }
+  
+}
