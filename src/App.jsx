@@ -16,35 +16,38 @@ const App = () => {
   const [playState, setPlayState] = useState(false);
 
   return (
-    <>
+    <BrowserRouter>
       <div>
         <Navbar />
-        <Hero />
-        <div className="container">
-          <Title subTitle="Our Events" title="What we offer" />
-          <Programs />
-          <About setPlayState={setPlayState} />
-          <Title subTitle="Gallery" title="Event Glimpse" />
-          <Campus />
-          <Title subTitle="Testimonials" title="What Students Says" />
-          <Testimonials />
-          <Title subTitle="Contact Us" title="Get in Touch" />
-          <Contact />
-          <Footer />
-        </div>
+        <Routes>
+          <Route path="/" element={
+            <>
+              <Hero />
+              <div className="container">
+                <Title subTitle="Our Events" title="What we offer" />
+                <Programs />
+                <About setPlayState={setPlayState} />
+                <Title  title="Dream Destinations to Study Abroad" />
+                <Campus />
+                <Title subTitle="Testimonials" title="What Students Says" />
+                <Testimonials />
+                <Title subTitle="Contact Us" title="Get in Touch" />
+                <Contact />
+                {/* <Footer /> */}
+              </div>
+            </>
+          } />
+          <Route path="/programs" element={
+            <div className="container">
+              <Title subTitle="Our Events" title="What we offer" />
+              <Programs />
+            </div>
+          } />
+          {/* <Route path="*" element={<NoPage />} /> */}
+        </Routes>
         <VideoPlayer playState={playState} setPlayState={setPlayState} />
       </div>
-
-      <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<Hero />}>
-            {/* <Route index element={<Hero />} /> */}
-            <Route path="/programs" element={<Programs />} />
-            {/* <Route path="*" element={<NoPage />} /> */}
-          </Route>
-        </Routes>
-      </BrowserRouter>
-    </>
+    </BrowserRouter>
   );
 };
 
