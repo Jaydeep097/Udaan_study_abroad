@@ -49,6 +49,7 @@ const Navbar = () => {
           </Link>
         </li>
         <li>
+          
           <Link
             to="contact"
             smooth={true}
@@ -58,6 +59,7 @@ const Navbar = () => {
           >
             Contact us
           </Link>
+          
         </li>
       </ul>
       <img src={menu_icon} alt="" className="menu-icon" onClick={toggleMenu} />
