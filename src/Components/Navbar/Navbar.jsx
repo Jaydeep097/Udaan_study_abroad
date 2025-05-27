@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from "react";
 import "./Navbar.css";
 import logo from "../../assets/udaanlogo.png";
-
+import { useAuth0 } from "@auth0/auth0-react";
 import { Link } from "react-scroll";
 import menu_icon from "../../assets/menu-icon.png";
 
 const Navbar = () => {
+   const { loginWithRedirect, logout, isAuthenticated, user } = useAuth0();
   const [sticky, setSticky] = useState(false);
 
   useEffect(() => {
@@ -59,6 +60,27 @@ const Navbar = () => {
           >
             Contact us
           </Link>
+          <li>
+            {
+              isAuthenticated && <p> {user.name}</p>
+            }
+          </li>
+          <li>
+            {
+              isAuthenticated ?  <li>
+              <button onClick={() => logout({ logoutParams: { returnTo: window.location.origin } })}>
+                 Log Out
+                 </button>
+          </li>
+              : (
+                 <li>
+               <button onClick={() => loginWithRedirect()}>Log In</button>
+          </li>
+              )
+            }
+          </li>
+
+         
           
         </li>
       </ul>
