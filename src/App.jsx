@@ -10,6 +10,7 @@ import Testimonials from "./Components/Testimonials/Testimonials";
 import Contact from "./Components/Contact/Contact";
 import Footer from "./Components/Footer/Footer";
 import VideoPlayer from "./Components/VideoPlayer/VideoPlayer";
+import DestinationDetail from "./Components/DestinationDetail/DestinationDetail";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 // Back to top button component
@@ -50,7 +51,6 @@ const App = () => {
 
   return (
     <BrowserRouter>
-      {/* <div className="app-container"> */}
       <Navbar />
       <Routes>
         <Route
@@ -58,8 +58,7 @@ const App = () => {
           element={
             <>
               <Hero />
-              {/* <div className=""> */}
-              <Title  title="What we offer" />
+              <Title title="What we offer" />
               <Programs />
               <About setPlayState={setPlayState} />
               <Title title="Dream Destinations to Study Abroad" />
@@ -69,7 +68,6 @@ const App = () => {
               <Title subTitle="Contact Us" title="Get in Touch" />
               <Contact />
               <Footer />
-              {/* </div> */}
             </>
           }
         />
@@ -79,14 +77,15 @@ const App = () => {
             <div className="">
               <Title subTitle="Our Events" title="What we offer" />
               <Programs />
+              <Footer />
             </div>
           }
         />
+        <Route path="/destination/:id" element={<DestinationDetail />} />
         {/* <Route path="*" element={<NoPage />} /> */}
       </Routes>
       <VideoPlayer playState={playState} setPlayState={setPlayState} />
       <BackToTop />
-      {/* </div> */}
     </BrowserRouter>
   );
 };
