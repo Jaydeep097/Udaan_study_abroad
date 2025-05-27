@@ -262,7 +262,7 @@ const DestinationDetail = () => {
             <h2>{section.title}</h2>
             <p>{section.text}</p>
           </div>
-        ))}
+        ))
 
         <div className="action-buttons">
           <Link to="/" className="btn outline-btn">
