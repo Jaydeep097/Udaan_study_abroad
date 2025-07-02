@@ -36,7 +36,7 @@ const Campus = () => {
     {
       image: gallery_4,
       name: "Ireland",
-      description: "Quality education in a friendly, safe environment",
+      description: "Quality education in a friendly, safe environment for study",
       slug: "ireland",
     },
     {
