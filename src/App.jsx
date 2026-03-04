@@ -68,6 +68,7 @@ const App = () => {
               <Title subTitle="Contact Us" title="Get in Touch" />
               <Contact />
               <Footer />
+              
             </>
           }
         />
